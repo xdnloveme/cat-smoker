@@ -1,10 +1,10 @@
 {
-  "name": "cli-service",
-  "version": "0.0.0",
-  "description": "cli-service",
+  "name": "@cat-smoker/cli-service",
+  "version": "0.0.1-alpha.0",
+  "description": "> TODO: description",
   "keywords": [
-    "cli",
-    "service"
+    "react",
+    "cli"
   ],
   "author": "xdnloveme <530063113@qq.com>",
   "homepage": "https://github.com/xdnloveme/cat-smoker/tree/master/packages/@cat-smoker/cli-service#readme",
@@ -18,7 +18,7 @@
     "lib"
   ],
   "publishConfig": {
-    "registry": "https://registry.npmjs.org"
+    "access": "public"
   },
   "repository": {
     "type": "git",
@@ -29,5 +29,6 @@
   },
   "bugs": {
     "url": "https://github.com/xdnloveme/cat-smoker/issues"
-  }
+  },
+  "gitHead": "df3c8425d6f7759d8806c4456ee61e4cba0ed4f3"
 }

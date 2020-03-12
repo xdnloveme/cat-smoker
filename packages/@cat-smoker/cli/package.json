@@ -1,7 +1,7 @@
 {
-  "name": "cli",
-  "version": "0.0.0",
-  "description": "cli",
+  "name": "@cat-smoker/cli",
+  "version": "0.0.1-alpha.0",
+  "description": "> TODO: description",
   "keywords": [
     "react",
     "cli"
@@ -14,14 +14,11 @@
     "lib": "lib",
     "test": "__tests__"
   },
-  "bin": {
-    "cat-smoker": "bin/react-cli.js"
-  },
   "files": [
     "lib"
   ],
   "publishConfig": {
-    "registry": "https://registry.npmjs.org"
+    "access": "public"
   },
   "repository": {
     "type": "git",
@@ -32,5 +29,6 @@
   },
   "bugs": {
     "url": "https://github.com/xdnloveme/cat-smoker/issues"
-  }
+  },
+  "gitHead": "df3c8425d6f7759d8806c4456ee61e4cba0ed4f3"
 }
