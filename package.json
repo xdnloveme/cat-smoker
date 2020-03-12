@@ -1,0 +1,31 @@
+{
+  "name": "cat-smoker",
+  "version": "1.0.0",
+  "description": "Cli for creating react apps flexibly, with a cool cat-smoker",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xdnloveme/cat-smoker.git"
+  },
+  "keywords": [
+    "react",
+    "cli",
+    "webpack"
+  ],
+  "author": "TangHaoyi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xdnloveme/cat-smoker/issues"
+  },
+  "homepage": "https://github.com/xdnloveme/cat-smoker#readme",
+  "dependencies": {
+    "commander": "^4.1.1",
+    "program": "^1.0.0"
+  },
+  "devDependencies": {
+    "lerna": "^3.20.2"
+  }
+}
