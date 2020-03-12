@@ -1,4 +1,8 @@
 {
+  "private": true,
+  "workspaces": [
+    "packages/@cat-smoker/*"
+  ],
   "name": "cat-smoker",
   "version": "1.0.0",
   "description": "Cli for creating react apps flexibly, with a cool cat-smoker",

@@ -1,21 +1,18 @@
 {
-  "name": "cli",
+  "name": "cli-service",
   "version": "0.0.0",
-  "description": "cli",
+  "description": "cli-service",
   "keywords": [
-    "react",
-    "cli"
+    "cli",
+    "service"
   ],
   "author": "xdnloveme <530063113@qq.com>",
-  "homepage": "https://github.com/xdnloveme/cat-smoker/tree/master/packages/@cat-smoker/cli#readme",
+  "homepage": "https://github.com/xdnloveme/cat-smoker/tree/master/packages/@cat-smoker/cli-service#readme",
   "license": "MIT",
-  "main": "lib/cli.js",
+  "main": "lib/cli-service.js",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
-  },
-  "bin": {
-    "cat-smoker": "bin/react-cli.js"
   },
   "files": [
     "lib"
