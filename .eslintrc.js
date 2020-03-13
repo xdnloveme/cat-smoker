@@ -10,7 +10,7 @@ module.exports = {
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-useless-escape': 0,
     'no-unused-vars': 0,
-    'comma-dangle': [2, 'always-multiline'],
+    // 'comma-dangle': [2, 'only-multiline'],
     'no-restricted-globals': 0,
     'import/no-unresolved': 0,
     'space-before-function-paren': 2,
@@ -18,6 +18,8 @@ module.exports = {
   },
   parserOptions: {
     parser: 'babel-eslint',
+    ecmaVersion: 2017,
+    sourceType: 'module'
   },
   globals: {
     name: 'off',

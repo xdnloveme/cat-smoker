@@ -35,7 +35,11 @@
   },
   "gitHead": "df3c8425d6f7759d8806c4456ee61e4cba0ed4f3",
   "dependencies": {
+    "@cat-smoker/cli-shared-utils": "^0.0.4-alpha.0",
     "commander": "^4.1.1",
-    "minimist": "^1.2.5"
+    "fs-extra": "^8.1.0",
+    "inquirer": "^7.1.0",
+    "minimist": "^1.2.5",
+    "validate-npm-package-name": "^3.0.0"
   }
 }

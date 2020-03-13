@@ -1,5 +1,5 @@
 {
-  "name": "cli-shared-utils",
+  "name": "@cat-smoker/cli-shared-utils",
   "version": "0.0.4-alpha.0",
   "description": "shared utils for cat-smoker",
   "author": "xdnloveme <530063113@qq.com>",
@@ -25,5 +25,10 @@
   },
   "bugs": {
     "url": "https://github.com/xdnloveme/cat-smoker/issues"
+  },
+  "dependencies": {
+    "chalk": "^3.0.0",
+    "fs-extra": "^8.1.0",
+    "inquirer": "^7.1.0"
   }
 }
