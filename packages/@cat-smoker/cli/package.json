@@ -6,6 +6,9 @@
     "react",
     "cli"
   ],
+  "bin": {
+    "cat-smoker": "bin/react-build-cli"
+  },
   "author": "xdnloveme <530063113@qq.com>",
   "homepage": "https://github.com/xdnloveme/cat-smoker/tree/master/packages/@cat-smoker/cli#readme",
   "license": "MIT",
