@@ -2,7 +2,8 @@ const path = require('path');
 const fs = require('fs-extra');
 const inquirer = require('inquirer');
 const validateNpmPackageName = require('validate-npm-package-name');
-const { logger, chalk } = require('@cat-smoker/cli-shared-utils');
+const { log, chalk } = require('@cat-smoker/cli-shared-utils');
+const Creator = require('./generator/Creator');
 
 const create = async (projectName, options) => {
   const cwd = options.cwd || process.cwd();
@@ -12,12 +13,12 @@ const create = async (projectName, options) => {
 
   // 判断项目名是否符合规范
   if (!isValidate.validForNewPackages) {
-    logger.log(`Invalid project name: "${projectName}", causes of this:`, 'red');
+    log(`Invalid project name: "${projectName}", causes of this:`, 'red');
     if (isValidate.errors && isValidate.errors.length > 0) {
-      logger.log(`reason: ${isValidate.errors.join('')}`, 'red');
+      log(`reason: ${isValidate.errors.join('')}`, 'red');
     }
     if (isValidate.warnings && isValidate.warnings.length > 0) {
-      logger.log(`reason: ${isValidate.warnings.join('')}`, 'yellow');
+      log(`reason: ${isValidate.warnings.join('')}`, 'yellow');
     }
     process.exit(1);
   }
@@ -43,8 +44,10 @@ const create = async (projectName, options) => {
     console.log(`\nWill removing ${chalk.cyan(destDir)}...`);
     await fs.remove(destDir);
   }
-
-  await fs.ensureDir(destDir);
+  const creator = new Creator(projectName, destDir);
+  creator.create()
+  console.log(creator);
+  // await fs.ensureDir(destDir);
 };
 
 module.exports = function (...args) {
