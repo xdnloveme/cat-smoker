@@ -2,6 +2,6 @@
 
 module.exports = cli;
 
-function cli() {
+function cli () {
     // TODO
 }

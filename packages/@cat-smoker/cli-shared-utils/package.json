@@ -1,15 +1,11 @@
 {
-  "name": "@cat-smoker/cli-service",
+  "name": "cli-shared-utils",
   "version": "0.0.4-alpha.0",
-  "description": "> TODO: description",
-  "keywords": [
-    "react",
-    "cli"
-  ],
+  "description": "shared utils for cat-smoker",
   "author": "xdnloveme <530063113@qq.com>",
-  "homepage": "https://github.com/xdnloveme/cat-smoker/tree/master/packages/@cat-smoker/cli-service#readme",
+  "homepage": "https://github.com/xdnloveme/cat-smoker/tree/master/packages/@cat-smoker/cli-shared-utils#readme",
   "license": "MIT",
-  "main": "lib/cli-service.js",
+  "main": "index.js",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
@@ -17,22 +13,17 @@
   "files": [
     "lib"
   ],
-  "publishConfig": {
-    "access": "public"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/xdnloveme/cat-smoker.git"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "bugs": {
     "url": "https://github.com/xdnloveme/cat-smoker/issues"
-  },
-  "gitHead": "df3c8425d6f7759d8806c4456ee61e4cba0ed4f3",
-  "dependencies": {
-    "commander": "^4.1.1",
-    "minimist": "^1.2.5"
   }
 }

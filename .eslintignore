@@ -1,0 +1,6 @@
+node_modules
+template
+packages/test
+temp
+dist
+__testfixtures__

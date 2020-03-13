@@ -2,6 +2,6 @@
 
 module.exports = cliService;
 
-function cliService() {
+function cliService () {
     // TODO
 }

@@ -8,7 +8,8 @@
   "description": "Cli for creating react apps flexibly, with a cool cat-smoker",
   "main": "index.js",
   "scripts": {
-    "test": "npm run test"
+    "test": "npm run test",
+    "lint": "eslint --fix packages/**/*.js packages/**/bin/*"
   },
   "repository": {
     "type": "git",
@@ -26,10 +27,14 @@
   },
   "homepage": "https://github.com/xdnloveme/cat-smoker#readme",
   "dependencies": {
-    "commander": "^4.1.1",
-    "program": "^1.0.0"
+    "commander": "^4.1.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.8.7",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "^25.1.0",
+    "eslint": "^6.8.0",
     "lerna": "^3.20.2"
   }
 }

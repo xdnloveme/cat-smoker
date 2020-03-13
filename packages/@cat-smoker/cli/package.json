@@ -35,6 +35,7 @@
   },
   "gitHead": "df3c8425d6f7759d8806c4456ee61e4cba0ed4f3",
   "dependencies": {
-    "commander": "^4.1.1"
+    "commander": "^4.1.1",
+    "minimist": "^1.2.5"
   }
 }
