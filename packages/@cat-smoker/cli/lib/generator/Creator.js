@@ -1,4 +1,5 @@
 const { clearConsole } = require('../utils/clearConsole');
+const Generator = require('./Generator');
 
 module.exports = class Creator {
   constructor (projectName, context) {
@@ -8,5 +9,9 @@ module.exports = class Creator {
 
   async create () {
     clearConsole();
+
+    const gen = new Generator(this.projectName, this.context);
+
+    gen.generate();
   }
 }
