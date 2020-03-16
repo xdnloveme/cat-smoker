@@ -45,8 +45,7 @@ const create = async (projectName, options) => {
     await fs.remove(destDir);
   }
   const creator = new Creator(projectName, destDir);
-  creator.create()
-  console.log(creator);
+  creator.create(options)
   // await fs.ensureDir(destDir);
 };
 
