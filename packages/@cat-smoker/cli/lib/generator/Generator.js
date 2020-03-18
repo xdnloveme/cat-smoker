@@ -17,15 +17,19 @@ const renderFile = function (name) {
 };
 
 module.exports = class Generator {
-  constructor (projectName, context) {
-    this.projectName = projectName;
+  constructor (context, { pkg, plugins }) {
     this.context = context;
+    this.pkg = pkg;
+    this.plugins = plugins;
+  }
+
+  initPlugins () {
+
   }
 
   async generate () {
-    console.log(templatePath);
+    this.initPlugins();
     const baseDir = path.resolve(__dirname, templatePath);
-    console.log(baseDir);
     const _files = await globby(['**'], { cwd: baseDir });
 
     const filesContentTree = _files.reduce((content, sourcePath) => {

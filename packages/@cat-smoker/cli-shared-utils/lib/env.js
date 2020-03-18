@@ -1,6 +1,7 @@
 const { execSync } = require('child_process');
 const LRUCache = require('lru-cache');
 
+let _hasGit;
 // 创建一个缓存区，长度为10，过期时间1000ms
 // 缓存项目的git status状态是否存在
 const _gitProjects = new LRUCache({
