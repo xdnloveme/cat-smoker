@@ -1,6 +1,6 @@
 {
   "name": "@cat-smoker/cli",
-  "version": "0.0.4-alpha.0",
+  "version": "0.0.5-alpha.0",
   "description": "> TODO: description",
   "keywords": [
     "react",
@@ -35,8 +35,8 @@
   },
   "gitHead": "df3c8425d6f7759d8806c4456ee61e4cba0ed4f3",
   "dependencies": {
-    "@cat-smoker/cli-service": "^0.0.4-alpha.0",
-    "@cat-smoker/cli-shared-utils": "^0.0.4-alpha.0",
+    "@cat-smoker/cli-service": "^0.0.5-alpha.0",
+    "@cat-smoker/cli-shared-utils": "^0.0.5-alpha.0",
     "commander": "^4.1.1",
     "fs-extra": "^8.1.0",
     "globby": "^11.0.0",
