@@ -28,7 +28,7 @@ program
     if (process.argv.includes('-g') || process.argv.includes('--git')) {
       options.forceGit = true
     }
-    console.log('options', options);
+    
     require('../lib/create')(name, options);
   });
 

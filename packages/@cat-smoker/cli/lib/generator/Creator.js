@@ -68,7 +68,6 @@ module.exports = class Creator {
 
     log(`⚙\u{fe0f}  安装脚手架插件, 这可能会花费一点时间...`);
     log();
-    console.log('plugins', preset.plugins);
     await pm.install();
 
     const plugins = await this.resolvePlugins(preset.plugins);
