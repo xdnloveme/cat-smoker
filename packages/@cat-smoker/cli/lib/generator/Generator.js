@@ -3,7 +3,7 @@ const globby = require('globby');
 const writeFileTree = require('../utils/writeFileTree');
 const { isBinaryFileSync } = require('isbinaryfile');
 const path = require('path');
-const templatePath = '../../../cli-service/lib/template';
+const templatePath = '../../../cli-service/generator/template';
 
 const renderFile = function (name) {
   // 如果是二进制流文件（比如favicon.ico）
@@ -17,14 +17,18 @@ const renderFile = function (name) {
 };
 
 module.exports = class Generator {
-  constructor (context, { pkg, plugins }) {
+  constructor (context, { pkg, plugins, pm }) {
     this.context = context;
     this.pkg = pkg;
     this.plugins = plugins;
+    this.pm = pm;
   }
 
-  initPlugins () {
-
+  async initPlugins () {
+    for (const plugin of this.plugins) {
+      const { apply, options } = plugin
+      await apply(this.pm, options);
+    }
   }
 
   async generate () {

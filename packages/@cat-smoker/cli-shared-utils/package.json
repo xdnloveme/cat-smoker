@@ -27,10 +27,13 @@
     "url": "https://github.com/xdnloveme/cat-smoker/issues"
   },
   "dependencies": {
+    "@cat-smoker/cli-service": "^0.0.4-alpha.0",
     "chalk": "^3.0.0",
     "execa": "^4.0.0",
     "fs-extra": "^8.1.0",
     "inquirer": "^7.1.0",
-    "ora": "^4.0.3"
+    "ora": "^4.0.3",
+    "semver": "^6.3.0",
+    "strip-ansi": "^6.0.0"
   }
 }

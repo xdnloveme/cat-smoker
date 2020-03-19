@@ -54,22 +54,23 @@ exports.resolveModule = function (request, context) {
     try {
       resolvedPath = createRequire(path.resolve(context, 'package.json')).resolve(request)
     } catch (e) {
+      console.log('出错了33', request, context);
       resolvedPath = resolve(request, { paths: [context] })
     }
-  } catch (e) {}
+  } catch (e) {
+    console.log(e);
+  }
   return resolvedPath
 }
 
 exports.loadModule = function (request, context, force = false) {
-  // createRequire doesn't work with jest mock modules (which we used in migrator, for inquirer)
-  if (process.env.VUE_CLI_TEST && request.endsWith('migrator')) {
-    return require(request)
-  }
 
   try {
     return createRequire(path.resolve(context, 'package.json'))(request)
   } catch (e) {
+    
     const resolvedPath = exports.resolveModule(request, context)
+    console.log('出错了', request, context);
     if (resolvedPath) {
       if (force) {
         clearRequireCache(resolvedPath)

@@ -3,6 +3,7 @@ const sortObject = require('../utils/sortObject');
 const {
   hasGit,
   hasProjectGit,
+  log,
   logWithSpinner,
   stopSpinner,
   execa,
@@ -11,6 +12,8 @@ const {
 const { defaults } = require('../options');
 const writeFileTree = require('../utils/writeFileTree');
 const Generator = require('./Generator');
+const getVersions = require('../utils/getVersions');
+const PackageManager = require('./PackageManager');
 
 module.exports = class Creator {
   constructor (projectName, context) {
@@ -24,9 +27,7 @@ module.exports = class Creator {
 
     clearConsole();
 
-    if (!preset) {
-      preset = defaults.presets['default'];
-    }
+    const latestMinor = await getVersions();
 
     const pkg = {
       name,
@@ -34,7 +35,24 @@ module.exports = class Creator {
       private: true,
       devDependencies: {},
     };
-    
+
+    if (!preset) {
+      preset = defaults.presets['default'];
+    }
+
+    preset.plugins['@cat-smoker/cli-service'] = Object.assign({
+      projectName: name
+    }, preset)
+    console.log(preset);
+
+    const deps = Object.keys(preset.plugins);
+    deps.forEach(dep => {
+      pkg.devDependencies[dep] =
+        preset.plugins[dep].version || (/^@cat-smoker/.test(dep) ? `~${latestMinor}` : `latest`);
+    });
+
+    const pm = new PackageManager(context, { pkg });
+
     // write package.json
     await writeFileTree(context, {
       'package.json': JSON.stringify(pkg, null, 2),
@@ -48,11 +66,19 @@ module.exports = class Creator {
     }
 
     stopSpinner();
+
+    log(`⚙\u{fe0f}  安装脚手架插件, 这可能会花费一点时间...`);
+    log();
+
+    await pm.install();
+
     const plugins = await this.resolvePlugins(preset.plugins);
-    
+
     const gen = new Generator(this.context, {
       name: this.projectName,
       pkg: pkg,
+      plugins,
+      pm,
     });
 
     gen.generate();

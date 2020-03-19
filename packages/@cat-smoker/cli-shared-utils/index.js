@@ -4,3 +4,4 @@
 
 module.exports.chalk = require('chalk');
 module.exports.execa = require('execa');
+module.exports.semver = require('semver');

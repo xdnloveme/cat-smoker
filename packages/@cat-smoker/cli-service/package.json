@@ -9,9 +9,9 @@
   "author": "xdnloveme <530063113@qq.com>",
   "homepage": "https://github.com/xdnloveme/cat-smoker/tree/master/packages/@cat-smoker/cli-service#readme",
   "license": "MIT",
-  "main": "lib/cli-service.js",
+  "main": "generator/index.js",
   "directories": {
-    "lib": "lib",
+    "generator": "generator",
     "test": "__tests__"
   },
   "files": [
