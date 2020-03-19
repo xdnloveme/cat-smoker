@@ -35,5 +35,6 @@
     "ora": "^4.0.3",
     "semver": "^6.3.0",
     "strip-ansi": "^6.0.0"
-  }
+  },
+  "gitHead": "384eeb6aa2ce2c27f93617568cd19081921f9add"
 }
