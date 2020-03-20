@@ -15,6 +15,7 @@ program
   .description('create a new react project')
   .option('-p, --preset <presetName>', 'Skip prompts and use saved or remote preset')
   .option('-d, --default', 'Skip prompts and use default preset')
+  .option('-l, --local', 'Module context require local url')
   .option('-g, --git [message]', 'Force git initialization with initial commit message', true)
   .option('-n, --no-git', 'Skip git initialization')
   .action((name, cmd) => {

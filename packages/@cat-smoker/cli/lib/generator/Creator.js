@@ -89,6 +89,7 @@ module.exports = class Creator {
     const plugins = [];
     for (const id of Object.keys(rawPlugins)) {
       const apply = loadModule(`${id}/generator`, this.context) || (() => {});
+      // const apply = loadModule(`${id}/generator`, __dirname || (() => {}))
       const options = rawPlugins[id] || {};
       plugins.push({ id, apply, options });
     }

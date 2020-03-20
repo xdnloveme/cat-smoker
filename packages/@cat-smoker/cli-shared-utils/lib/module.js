@@ -54,7 +54,6 @@ exports.resolveModule = function (request, context) {
     try {
       resolvedPath = createRequire(path.resolve(context, 'package.json')).resolve(request)
     } catch (e) {
-      console.log('出错了33', request, context);
       resolvedPath = resolve(request, { paths: [context] })
     }
   } catch (e) {
@@ -64,13 +63,14 @@ exports.resolveModule = function (request, context) {
 }
 
 exports.loadModule = function (request, context, force = false) {
+  if (process.env.CAT_SMOKER_MODULE_LOCAL) {
+    return require(request);
+  }
 
   try {
     return createRequire(path.resolve(context, 'package.json'))(request)
   } catch (e) {
-    
     const resolvedPath = exports.resolveModule(request, context)
-    console.log('出错了', request, context);
     if (resolvedPath) {
       if (force) {
         clearRequireCache(resolvedPath)
