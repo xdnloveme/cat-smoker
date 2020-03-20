@@ -1,6 +1,7 @@
 const fs = require('fs');
 const globby = require('globby');
 const writeFileTree = require('../utils/writeFileTree');
+const Interface = require('../generator/Interface');
 const { isBinaryFileSync } = require('isbinaryfile');
 const path = require('path');
 const templatePath = '../../../cli-service/generator/template';
@@ -22,12 +23,14 @@ module.exports = class Generator {
     this.pkg = pkg;
     this.plugins = plugins;
     this.pm = pm;
+    this.depSources = {};
   }
 
   async initPlugins () {
     for (const plugin of this.plugins) {
-      const { apply, options } = plugin
-      await apply(this.pm, options);
+      const { id, apply, options } = plugin;
+      const api = new Interface(id, this, options);
+      await apply(api, options);
     }
   }
 
@@ -40,6 +43,8 @@ module.exports = class Generator {
       content[sourcePath] = renderFile(path.resolve(baseDir, sourcePath));
       return content;
     }, {});
+
+    filesContentTree['package.json'] = JSON.stringify(this.pkg, null, 2) + '\n'
 
     await writeFileTree(this.context, filesContentTree);
   }

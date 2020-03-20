@@ -80,6 +80,8 @@ module.exports = class Creator {
     });
 
     gen.generate();
+
+    await pm.install();
   }
 
   // { id: options } => [{ id, apply, options }]

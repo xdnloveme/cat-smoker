@@ -38,6 +38,7 @@
     "@cat-smoker/cli-service": "^0.0.6-alpha.0",
     "@cat-smoker/cli-shared-utils": "^0.0.6-alpha.0",
     "commander": "^4.1.1",
+    "deepmerge": "^4.2.2",
     "fs-extra": "^8.1.0",
     "globby": "^11.0.0",
     "inquirer": "^7.1.0",
