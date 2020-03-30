@@ -1,7 +1,7 @@
 module.exports = api => {
   api.extendPackage({
     scripts: {
-      serve: 'cat-smoker-cli-service serve',
+      start: 'cat-smoker-cli-service serve',
       build: 'cat-smoker-cli-service build',
     },
     dependencies: {

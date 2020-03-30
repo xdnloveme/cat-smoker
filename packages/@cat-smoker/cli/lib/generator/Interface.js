@@ -23,6 +23,7 @@ module.exports = class Interface {
     this.bin = 'npm';
   }
 
+  // 扩展package
   async extendPackage (fields, options = {}) {
     const extendOptions = {
       prune: false,
