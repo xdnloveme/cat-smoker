@@ -26,6 +26,7 @@ module.exports = class Service {
 
   runServe () {
     const compiler = webpack(webpackConfig)
+    console.log('编译是', webpackConfig);
     const server = new WebpackDevServer(compiler);
     
     server.listen(defaults.port, defaults.host, err => {
