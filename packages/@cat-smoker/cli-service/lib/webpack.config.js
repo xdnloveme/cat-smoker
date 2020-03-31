@@ -2,6 +2,10 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
+const imageInlineSizeLimit = parseInt(
+  process.env.IMAGE_INLINE_SIZE_LIMIT || '10000'
+);
+
 module.exports = {
   mode: 'development',
   entry: path.resolve(process.cwd(), './src/index.js'),
@@ -13,6 +17,21 @@ module.exports = {
   },
   module: {
     rules: [
+      {
+        test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/, /\.svg$/],
+        loader: require.resolve('url-loader'),
+        options: {
+          limit: imageInlineSizeLimit,
+          name: 'static/media/[name].[hash:8].[ext]',
+        },
+      },
+      {
+        test: /\.css$/,
+        use: [
+          { loader: require.resolve('style-loader') },
+          { loader: require.resolve('css-loader') }
+        ]
+      },
       {
         test: /\.m?js$/,
         exclude: /(node_modules|bower_components)/,
