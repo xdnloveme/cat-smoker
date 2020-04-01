@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from './components/Header'
-import './App.css';
+import './index.css';
 import BasicLayout from './layout/BasicLayout';
 
 function App() {

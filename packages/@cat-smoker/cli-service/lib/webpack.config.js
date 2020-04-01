@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
@@ -47,7 +48,14 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: 'react app',
+      templateParameters: (compilation) => {
+        return {
+          compilation,
+          webpackConfig: compilation.options,
+          'BASE_URL': '/'
+        };
+      },
+      template: 'public/index.html',
     }),
   ],
 };
