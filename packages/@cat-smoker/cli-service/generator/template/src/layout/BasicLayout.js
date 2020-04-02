@@ -1,9 +1,9 @@
 import React from 'react';
 
-function BasicLayout() {
+function BasicLayout(props) {
   return (
     <div className="BasicLayout">
-      布局
+      { props.children }
     </div>
   );
 }
