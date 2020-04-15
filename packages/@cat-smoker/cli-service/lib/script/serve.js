@@ -22,16 +22,16 @@ module.exports = function () {
   console.log(`  - 局域网地址: ${chalk.cyan('http://localhost:8000/')}`)
 
   return new Promise((resolve, reject) => {
-    resolve({
-      server,
-      url: 'http://localhost:8000/'
-    })
-
     server.listen(defaults.port, defaults.host, err => {
       if (err) {
         reject(err);
       }
     });
+
+    resolve({
+      server,
+      url: 'http://localhost:8000/'
+    })
   })
   
   
