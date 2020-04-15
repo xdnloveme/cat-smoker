@@ -33,7 +33,7 @@
   "bugs": {
     "url": "https://github.com/xdnloveme/cat-smoker/issues"
   },
-  "gitHead": "384eeb6aa2ce2c27f93617568cd19081921f9add",
+  "gitHead": "e39667a972092cd3193fedd4005d7214bf47fb15",
   "dependencies": {
     "commander": "^4.1.1",
     "fs-extra": "^8.1.0",
