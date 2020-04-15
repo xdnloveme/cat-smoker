@@ -1,6 +1,6 @@
 {
   "name": "@cat-smoker/cli-service",
-  "version": "0.0.7-alpha.0",
+  "version": "0.0.8-alpha.0",
   "description": "> TODO: description",
   "keywords": [
     "react",
@@ -44,7 +44,7 @@
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.0",
     "@babel/preset-react": "^7.9.4",
-    "@cat-smoker/cli-shared-utils": "^0.0.7-alpha.0",
+    "@cat-smoker/cli-shared-utils": "^0.0.8-alpha.0",
     "babel-loader": "^8.1.0",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.4.2",

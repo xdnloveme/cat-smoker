@@ -1,6 +1,6 @@
 {
   "name": "@cat-smoker/cli",
-  "version": "0.0.7-alpha.0",
+  "version": "0.0.8-alpha.0",
   "description": "> TODO: description",
   "keywords": [
     "react",
@@ -35,8 +35,8 @@
   },
   "gitHead": "e39667a972092cd3193fedd4005d7214bf47fb15",
   "dependencies": {
-    "@cat-smoker/cli-service": "^0.0.7-alpha.0",
-    "@cat-smoker/cli-shared-utils": "^0.0.7-alpha.0",
+    "@cat-smoker/cli-service": "^0.0.8-alpha.0",
+    "@cat-smoker/cli-shared-utils": "^0.0.8-alpha.0",
     "commander": "^4.1.1",
     "deepmerge": "^4.2.2",
     "fs-extra": "^8.1.0",
