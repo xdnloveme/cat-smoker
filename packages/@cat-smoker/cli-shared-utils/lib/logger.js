@@ -6,16 +6,7 @@ const logInfo = console.log;
 const logError = console.error;
 const logWarn = console.warn;
 
-const prefix = 'cat-somker';
-
-const format = (label, msg) => {
-  return msg
-    .split('\n')
-    .map((line, i) => {
-      return i === 0 ? `${label} ${line}` : line.padStart(stripAnsi(label).length);
-    })
-    .join('\n');
-};
+const prefix = 'cat-smoker-';
 
 module.exports.info = msg => logInfo(`${chalk.hex('#3333').bgBlue(`${prefix}INFO `)} ${msg}`);
 
@@ -26,8 +17,8 @@ module.exports.warn = msg => logWarn(`${chalk.hex('#3333').bgYellow(`${prefix}WA
 module.exports.success = msg =>
   logInfo(`${chalk.hex('#3333').bgGreen(`${prefix}SUCCESS `)} ${msg}`);
 
-module.exports.log = (msg = '', tag = null) => {
-  tag ? console.log(format(chalkTag(tag), msg)) : console.log(msg);
+module.exports.log = (msg = '') => {
+  console.log(msg);
 };
 
 module.exports.clearConsole = title => {

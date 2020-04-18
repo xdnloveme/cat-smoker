@@ -1,4 +1,4 @@
-['env', 'logger', 'spinner', 'module'].forEach(key => {
+['env', 'logger', 'spinner', 'module', 'schema'].forEach(key => {
   Object.assign(exports, require(`./lib/${key}`));
 });
 

@@ -63,10 +63,6 @@ exports.resolveModule = function (request, context) {
 }
 
 exports.loadModule = function (request, context, force = false) {
-  if (process.env.CAT_SMOKER_MODULE_LOCAL) {
-    return require(request);
-  }
-
   try {
     return createRequire(path.resolve(context, 'package.json'))(request)
   } catch (e) {
