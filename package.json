@@ -1,7 +1,8 @@
 {
   "private": true,
   "workspaces": [
-    "packages/@cat-smoker/*"
+    "packages/@cat-smoker/*",
+    "packages/test/*"
   ],
   "name": "cat-smoker",
   "version": "1.0.0",

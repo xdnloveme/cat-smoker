@@ -1,5 +1,18 @@
 #!/usr/bin/env node
 
+const slash = require('slash');
+const fs = require('fs')
+
+// enter debug mode when creating test repo
+if (
+  slash(process.cwd()).indexOf('/packages/test') > 0 && (
+    fs.existsSync(path.resolve(process.cwd(), '../@cat-smoker')) ||
+    fs.existsSync(path.resolve(process.cwd(), '../../@cat-smoker'))
+  )
+) {
+  process.env.CAT_SMOKER_DEBUG_MODE = true
+}
+
 const program = require('commander');
 const minimist = require('minimist');
 const { log } = require('@cat-smoker/cli-shared-utils');

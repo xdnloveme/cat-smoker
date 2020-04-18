@@ -19,8 +19,6 @@ module.exports = class Interface {
     this.id = id;
     this.generator = generator;
     this.pluginOptions = pluginOptions;
-    // 先只支持npm
-    this.bin = 'npm';
   }
 
   // 扩展package
@@ -30,9 +28,7 @@ module.exports = class Interface {
       merge: true,
       warnIncompatibleVersions: true,
     };
-
-    // this condition statement is added for compatiblity reason, because
-    // in version 4.0.0 to 4.1.2, there's no `options` object, but a `forceNewVersion` flag
+    
     if (typeof options === 'boolean') {
       extendOptions.warnIncompatibleVersions = !options;
     } else {

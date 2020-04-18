@@ -9,12 +9,6 @@ const create = async (projectName, options) => {
   const cwd = options.cwd || process.cwd();
   const destDir = path.resolve(cwd, projectName);
 
-  const { local } = options;
-
-  if (local) {
-    process.env.CAT_SMOKER_MODULE_LOCAL = true;
-  }
-
   const isValidate = validateNpmPackageName(projectName);
 
   // 判断项目名是否符合规范

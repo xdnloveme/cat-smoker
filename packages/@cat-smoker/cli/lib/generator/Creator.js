@@ -68,7 +68,14 @@ module.exports = class Creator {
 
     log(`⚙\u{fe0f}  安装脚手架插件, 这可能会花费一点时间...`);
     log();
-    await pm.install();
+
+    if (process.env.CAT_SMOKER_DEBUG_MODE) {
+      // debug mode
+      console.log('enable debug mode');
+    } else {
+      await pm.install();
+    }
+    
 
     const plugins = await this.resolvePlugins(preset.plugins);
     
@@ -79,6 +86,7 @@ module.exports = class Creator {
       pm,
     });
 
+    log(`🚀  开始执行项目构造程序...`)
     gen.generate();
 
     await pm.install();
