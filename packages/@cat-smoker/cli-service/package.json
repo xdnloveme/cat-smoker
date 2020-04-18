@@ -33,11 +33,12 @@
   "bugs": {
     "url": "https://github.com/xdnloveme/cat-smoker/issues"
   },
-  "gitHead": "e39667a972092cd3193fedd4005d7214bf47fb15",
+  "gitHead": "1c3d4e2c7f2e7c0678e4325903ae731268112f0d",
   "dependencies": {
     "commander": "^4.1.1",
     "fs-extra": "^8.1.0",
     "inquirer": "^7.1.0",
+    "lodash.defaultsdeep": "^4.6.1",
     "minimist": "^1.2.5"
   },
   "devDependencies": {
@@ -45,9 +46,11 @@
     "@babel/preset-env": "^7.9.0",
     "@babel/preset-react": "^7.9.4",
     "@cat-smoker/cli-shared-utils": "^0.0.8-alpha.0",
+    "address": "^1.1.2",
     "babel-loader": "^8.1.0",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.4.2",
+    "default-gateway": "^6.0.0",
     "express": "^4.17.1",
     "html-webpack-plugin": "^4.0.3",
     "react": "^16.13.0",
