@@ -2,6 +2,7 @@
 
 const slash = require('slash');
 const fs = require('fs')
+const path = require('path');
 
 // enter debug mode when creating test repo
 if (

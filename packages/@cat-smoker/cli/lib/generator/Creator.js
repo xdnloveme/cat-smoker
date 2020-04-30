@@ -7,6 +7,7 @@ const {
   logWithSpinner,
   stopSpinner,
   execa,
+  chalk,
   loadModule,
 } = require('@cat-smoker/cli-shared-utils');
 const { defaults } = require('../options');
@@ -71,11 +72,11 @@ module.exports = class Creator {
 
     if (process.env.CAT_SMOKER_DEBUG_MODE) {
       // debug mode
-      console.log('enable debug mode');
+      console.log(`${chalk.blueBright('[Cat-smoker]: ')}${chalk.yellowBright('开启本地调试模式!\n')}`);
+      await require('../utils/setDevSetup.js')(context);
     } else {
       await pm.install();
     }
-    
 
     const plugins = await this.resolvePlugins(preset.plugins);
     
@@ -99,7 +100,6 @@ module.exports = class Creator {
     const plugins = [];
     for (const id of Object.keys(rawPlugins)) {
       const apply = loadModule(`${id}/generator`, this.context) || (() => {});
-      // const apply = loadModule(`${id}/generator`, __dirname || (() => {}))
       const options = rawPlugins[id] || {};
       plugins.push({ id, apply, options });
     }
