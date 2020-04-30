@@ -10,12 +10,10 @@
     "lib": "lib",
     "test": "__tests__"
   },
-  "files": [
-    "lib"
-  ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xdnloveme/cat-smoker.git"
+    "url": "git+https://github.com/xdnloveme/cat-smoker.git",
+    "directory": "packages/@cat-smoker/cli-shared-utils"
   },
   "publishConfig": {
     "access": "public"

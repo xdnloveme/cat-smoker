@@ -37,6 +37,7 @@
   "dependencies": {
     "@cat-smoker/cli-service": "^0.0.8-alpha.0",
     "@cat-smoker/cli-shared-utils": "^0.0.8-alpha.0",
+    "cmd-shim": "^4.0.1",
     "commander": "^4.1.1",
     "deepmerge": "^4.2.2",
     "fs-extra": "^8.1.0",

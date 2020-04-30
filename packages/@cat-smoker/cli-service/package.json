@@ -1,18 +1,18 @@
 {
   "name": "@cat-smoker/cli-service",
   "version": "0.0.8-alpha.0",
-  "description": "> TODO: description",
+  "description": "service for App",
+  "main": "lib/Service.js",
+  "bin": {
+    "cat-smoker-cli-service": "bin/cat-smoker-cli-service.js"
+  },
   "keywords": [
     "react",
     "cli"
   ],
-  "bin": {
-    "cat-smoker-cli-service": "bin/cat-smoker-cli-service.js"
-  },
   "author": "xdnloveme <530063113@qq.com>",
   "homepage": "https://github.com/xdnloveme/cat-smoker/tree/master/packages/@cat-smoker/cli-service#readme",
   "license": "MIT",
-  "main": "generator/index.js",
   "directories": {
     "generator": "generator",
     "test": "__tests__"
@@ -25,7 +25,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xdnloveme/cat-smoker.git"
+    "url": "git+https://github.com/xdnloveme/cat-smoker.git",
+    "directory": "packages/@cat-smoker/cli-service"
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1"
@@ -35,6 +36,7 @@
   },
   "gitHead": "1c3d4e2c7f2e7c0678e4325903ae731268112f0d",
   "dependencies": {
+    "@cat-smoker/cli-shared-utils": "^0.0.8-alpha.0",
     "commander": "^4.1.1",
     "fs-extra": "^8.1.0",
     "inquirer": "^7.1.0",
@@ -45,7 +47,6 @@
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.0",
     "@babel/preset-react": "^7.9.4",
-    "@cat-smoker/cli-shared-utils": "^0.0.8-alpha.0",
     "address": "^1.1.2",
     "babel-loader": "^8.1.0",
     "clean-webpack-plugin": "^3.0.0",
@@ -60,5 +61,8 @@
     "webpack": "^4.42.1",
     "webpack-dev-middleware": "^3.7.2",
     "webpack-dev-server": "^3.10.3"
+  },
+  "engines": {
+    "node": ">=8"
   }
 }
