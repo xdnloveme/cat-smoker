@@ -25,7 +25,6 @@
     "url": "https://github.com/xdnloveme/cat-smoker/issues"
   },
   "dependencies": {
-    "@cat-smoker/cli-service": "^0.0.8-alpha.0",
     "chalk": "^3.0.0",
     "execa": "^4.0.0",
     "fs-extra": "^8.1.0",
