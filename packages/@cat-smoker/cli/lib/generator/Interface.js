@@ -21,7 +21,11 @@ module.exports = class Interface {
     this.pluginOptions = pluginOptions;
   }
 
-  // 扩展package
+  /**
+   * 扩展package
+   * @param {Object|Function} fields package字段名
+   * @param {Object} options 设置options
+   */
   async extendPackage (fields, options = {}) {
     const extendOptions = {
       prune: false,

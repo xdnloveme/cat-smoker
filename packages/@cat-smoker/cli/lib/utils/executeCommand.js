@@ -1,7 +1,7 @@
 const { execa } = require('@cat-smoker/cli-shared-utils')
 const EventEmitter = require('events')
 
-const debug = require('debug')('react-smoker-cli:install')
+const debug = require('debug')('cat-smoker-cli:execute')
 
 class InstallProgress extends EventEmitter {
   constructor () {

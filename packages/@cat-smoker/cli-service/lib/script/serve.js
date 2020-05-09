@@ -1,4 +1,4 @@
-const { chalk } = require('@cat-smoker/cli-shared-utils');
+const { chalk, clearConsole, success, info, openBrowser } = require('@cat-smoker/cli-shared-utils');
 const WebpackDevServer = require('webpack-dev-server');
 const webpack = require('webpack');
 const webpackConfig = require('../webpack.config');
@@ -15,7 +15,10 @@ module.exports = function (options) {
   const server = new WebpackDevServer(compiler, {
     logLevel: 'silent',
     clientLogLevel: 'silent',
+    inline: true,
   });
+
+  let isFirstCompile = true;
 
   const host = defaults.host;
   const useHttps = defaults.https;
@@ -25,16 +28,43 @@ module.exports = function (options) {
 
   const url = prepareUrl(protocol, host, port);
 
-  console.log();
-  console.log(`  应用本地开发模式已启动:`);
-  console.log(`  - 本地地址:   ${chalk.cyan(url.localUrlForTerminal)}`);
-  console.log(`  - 局域网地址: ${chalk.cyan(url.lanUrlForTerminal)}`);
-
   return new Promise((resolve, reject) => {
+    // compile done
+    compiler.hooks.done.tap('cat-smoker-cli-service serve', stats => {
+      if (stats.hasErrors()) {
+        return process.exit(1);
+      }
+
+      clearConsole();
+
+      success('编译成功！');
+
+      console.log();
+      console.log(`  应用本地开发模式已启动:`);
+      console.log(`  - 本地地址:   ${chalk.cyan(url.localUrlForTerminal)}`);
+      console.log(`  - 局域网地址: ${chalk.cyan(url.lanUrlForTerminal)}`);
+
+      // open browser
+      if (isFirstCompile) {
+        isFirstCompile = false;
+
+        const browserLocalUrl = url.localUrlForBrowser;
+        openBrowser(browserLocalUrl);
+      }
+    });
+
+    // before Compile
+    compiler.hooks.beforeCompile.tap('cat-smoker-cli-service serve', () => {
+      console.log();
+      info('准备开始编译...');
+    });
+
     server.listen(defaults.port, defaults.host, err => {
       if (!err) {
         reject(err);
       }
+
+      console.log(chalk.cyan('开发服务正在启动......\n'));
     });
 
     resolve({

@@ -24,8 +24,7 @@ module.exports.log = (msg = '') => {
 module.exports.clearConsole = title => {
   // 根据isTTY 判断是否位于终端上下文
   // 这个照搬的vue-cli的判断，虽然我觉得这个没啥意义判断
-  // 存在这个判断的意义就是 区分一般的终端环境和其他文件环境，达到不同环境显示不同颜色的目的
-  // 好吧，只有这个解释了，但是我觉得无所谓这个判断，不喜欢的可以去掉
+  // 判断是否终端处于最后一行
   if (process.stdout.isTTY) {
     const blank = '\n'.repeat(process.stdout.rows);
     console.log(blank);

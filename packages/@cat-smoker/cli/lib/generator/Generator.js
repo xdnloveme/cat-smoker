@@ -38,7 +38,6 @@ module.exports = class Generator {
     this.initPlugins();
     const baseDir = path.resolve(__dirname, templatePath);
     const _files = await globby(['**'], { cwd: baseDir });
-
     const filesContentTree = _files.reduce((content, sourcePath) => {
       content[sourcePath] = renderFile(path.resolve(baseDir, sourcePath));
       return content;
