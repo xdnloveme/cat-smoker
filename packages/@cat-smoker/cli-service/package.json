@@ -41,7 +41,8 @@
     "fs-extra": "^8.1.0",
     "inquirer": "^7.1.0",
     "lodash.defaultsdeep": "^4.6.1",
-    "minimist": "^1.2.5"
+    "minimist": "^1.2.5",
+    "webpack-chain": "^6.4.0"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",

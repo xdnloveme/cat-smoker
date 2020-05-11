@@ -1,7 +1,8 @@
 const { chalk, clearConsole, success, info, openBrowser } = require('@cat-smoker/cli-shared-utils');
 const WebpackDevServer = require('webpack-dev-server');
 const webpack = require('webpack');
-const webpackConfig = require('../webpack.config');
+const webpackConfig = require('../utils/webpack.config');
+const { chainProcess } = require('../utils/WebpackConfigChain');
 const prepareUrl = require('../utils/prepareUrl');
 
 const defaults = {
@@ -18,6 +19,14 @@ module.exports = function (options) {
     inline: true,
   });
 
+  ['SIGINT', 'SIGTERM'].forEach(signal => {
+    process.on(signal, () => {
+      server.close(() => {
+        process.exit(0);
+      });
+    });
+  });
+
   let isFirstCompile = true;
 
   const host = defaults.host;
@@ -28,6 +37,19 @@ module.exports = function (options) {
 
   const url = prepareUrl(protocol, host, port);
 
+  // const configTest = chainProcess(config => {
+  //   config
+  //     // 修改 entry 配置
+  //     .entry('index')
+  //     .add('src/index.js')
+  //     .end()
+  //     // 修改 output 配置
+  //     .output.path('dist')
+  //     .filename('[name].bundle.js');
+  // });
+
+  // console.log('测试', configTest);
+
   return new Promise((resolve, reject) => {
     // compile done
     compiler.hooks.done.tap('cat-smoker-cli-service serve', stats => {
@@ -37,6 +59,7 @@ module.exports = function (options) {
 
       clearConsole();
 
+      // successfully
       success('编译成功！');
 
       console.log();
